@@ -119,6 +119,8 @@ find_package(fmt CONFIG REQUIRED)
 find_package(wangle CONFIG REQUIRED)
 find_package(Zlib REQUIRED)
 find_package(Zstd REQUIRED)
+find_package(Xxhash REQUIRED)
+find_package(mvfst CONFIG REQUIRED)
 find_package(FBThrift REQUIRED) # must come after wangle
 find_package(NUMA REQUIRED)
 find_package(Sparsemap REQUIRED)

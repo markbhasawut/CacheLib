@@ -26,11 +26,14 @@ add_library (cachelib_common
   PercentileStats.cpp
   PeriodicWorker.cpp
   piecewise/GenericPieces.cpp
+  piecewise/GenericPiecesBase.cpp
   piecewise/RequestRange.cpp
   Serialization.cpp
   Utils.cpp
 )
 add_dependencies(cachelib_common thrift_generated_files)
+
+find_library(XXHASH_LIBRARY xxhash)
 
 target_link_libraries(cachelib_common PUBLIC
   Threads::Threads
@@ -42,6 +45,7 @@ target_link_libraries(cachelib_common PUBLIC
   Folly::folly_exception_tracer_base
   Folly::folly_exception_counter
   GTest::gtest
+  ${XXHASH_LIBRARY}
 )
 
 install(TARGETS cachelib_common
