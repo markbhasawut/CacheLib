@@ -6,6 +6,7 @@ on:
   push:
     branches:
     - main
+    - fix-oss-build
   pull_request:
     branches:
     - main
@@ -15,7 +16,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: 16-core-ubuntu
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Show disk space at start
